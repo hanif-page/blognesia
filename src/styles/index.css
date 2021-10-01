@@ -24,6 +24,12 @@ html
     scroll-behavior: smooth;
 }
 
+body 
+{
+    /* background: var(--main-navy); */
+    min-height: 200vh;
+}
+
 a 
 {
     text-decoration: none;
@@ -34,9 +40,125 @@ ul, li
     list-style: none;
 }
 
-header, footer
+header, .mobile-nav, footer
 {
     padding: 0 1.5rem;
+}
+
+.header-container 
+{
+    position: fixed;
+    width: 100%;
+
+}
+
+header
+{
+    height: 80px;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid var(--white); */
+}
+
+header h1 a 
+{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: .8em;
+}
+
+header .normal-nav 
+{
+    display: none;
+}
+
+header .hamburger 
+{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+header .hamburger .bar 
+{
+    display: inline-block;
+    width: 40px;
+    height: 4px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: 1s;
+}
+
+header .hamburger.open span:nth-child(2) 
+{
+    width: 20px;
+}
+header .hamburger.open span:nth-child(3) 
+{
+    width: 10px;
+}
+
+header .hamburger .bar:nth-child(2)
+{
+    margin: 4px 0;
+}
+
+.mobile-nav 
+{
+    padding-bottom: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background: transparent;
+    transform: translateY(-500px);
+    transition: 2s;
+}
+
+.mobile-nav.open 
+{
+    transform: translateY(0);
+}
+
+.mobile-nav ul 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav ul li 
+{
+    margin-top: .8rem;
+}
+
+.mobile-nav ul li a 
+{
+    text-transform: capitalize;
+    color: var(--white);
+    font-weight: 500;
+    font-size: .9em;
+    font-family: 'Poppins';
+}
+
+.mobile-nav ul li.daerah a  
+{
+    display: flex;
+    align-items: center;
+} 
+
+.mobile-nav ul li.daerah a .fa-search 
+{
+    color: var(--main-orange);
+    margin-left: .3rem;
+}
+
+.hero 
+{
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(0,0,0, .4), rgba(0,0,0, .4)), url(../../assets/img/hero-pict.png);
 }
 
 @media screen and (min-width: 768px)
@@ -45,6 +167,54 @@ header, footer
     {
         padding: 0 2.5rem;
     }
+
+    header .normal-nav 
+    {
+        display: block;
+    }
+    
+    header .normal-nav ul 
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    header .normal-nav ul li 
+    {
+        margin-left: 1.8rem;
+    }
+
+    header .normal-nav ul a 
+    {
+        text-transform: capitalize;
+        color: var(--white);
+        font-weight: 500;
+        font-size: .8em;
+        font-family: 'Poppins';
+    }
+
+    header .normal-nav ul li.daerah a  
+    {
+        display: flex;
+        align-items: center;
+    } 
+
+    header .normal-nav ul li.daerah a .fa-search 
+    {
+        color: var(--main-orange);
+        margin-left: .3rem;
+    }
+
+    header .hamburger 
+    {
+        display: none;
+    }
+
+    .mobile-nav 
+    {
+        display: none;
+    }
+
 }
 
 @media screen and (min-width: 992px)
@@ -52,5 +222,15 @@ header, footer
     header, footer 
     {
         padding: 0 4rem;
+    }
+
+    header .normal-nav ul li
+    {
+        margin-left: 2.3rem;
+    }
+
+    header .normal-nav ul a 
+    {
+        font-size: .9em;
     }
 }
