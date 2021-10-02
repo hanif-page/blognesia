@@ -1,9 +1,23 @@
+/* 
+    BUG:
+    1. Mobile Nav List (::after) => width not fit to the text
+    2. 768px header box-shadow => if the header.openNav, then the 786px header will don't have the box-shadow too (we don't want this things happen)
+*/
+
+/* NOTE
+   z-index : 
+   - Header = 50
+   - mobile nav = 30
+   - search daerah = 40
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root 
 {
     --white: #fff;
     --black: #333;
+    --gray: #ddd;
     --main-navy: #3A445D;
     --main-green: #2EC4B6;
     --secondary-green: #CBF3F0;
@@ -24,12 +38,6 @@ html
     scroll-behavior: smooth;
 }
 
-body 
-{
-    /* background: var(--main-navy); */
-    min-height: 200vh;
-}
-
 a 
 {
     text-decoration: none;
@@ -48,26 +56,36 @@ header, .mobile-nav, footer
 .header-container 
 {
     position: fixed;
+    z-index: 50;
     width: 100%;
-
 }
 
 header
 {
     height: 80px;
     width: 100%;
-    background: transparent;
+    background: var(--white);
+    position: relative;
+    z-index: 50;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid var(--white); */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0, .08);
+    transition: box-shadow 1s;
+}
+
+header.navOpen 
+{
+    box-shadow: none;
 }
 
 header h1 a 
 {
-    color: var(--white);
+    color: var(--main-green);
     text-transform: capitalize;
-    font-size: .8em;
+    font-size: .7em;
 }
 
 header .normal-nav 
@@ -85,20 +103,25 @@ header .hamburger
 header .hamburger .bar 
 {
     display: inline-block;
-    width: 40px;
+    width: 36px;
     height: 4px;
-    background: var(--white);
+    background: var(--main-green);
     border-radius: 2px;
-    transition: 1s;
+    transition: .5s;
 }
 
-header .hamburger.open span:nth-child(2) 
+header .hamburger:active .bar 
 {
-    width: 20px;
+    background: var(--secondary-green)
+} 
+
+header .hamburger.navOpen span:nth-child(2) 
+{
+    width: 50%;
 }
-header .hamburger.open span:nth-child(3) 
+header .hamburger.navOpen span:nth-child(3) 
 {
-    width: 10px;
+    width: 25%;
 }
 
 header .hamburger .bar:nth-child(2)
@@ -108,23 +131,29 @@ header .hamburger .bar:nth-child(2)
 
 .mobile-nav 
 {
+    padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    background: transparent;
+    background: var(--white);
     transform: translateY(-500px);
-    transition: 2s;
+    transition: transform 1.5s;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,.08);
 }
 
 .mobile-nav.open 
 {
-    transform: translateY(0);
+    transform: translateY(-1rem);
 }
 
 .mobile-nav ul 
 {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 30;
 }
 
 .mobile-nav ul li 
@@ -135,22 +164,160 @@ header .hamburger .bar:nth-child(2)
 .mobile-nav ul li a 
 {
     text-transform: capitalize;
-    color: var(--white);
+    transition: color .3s;
+    color: var(--main-green);
     font-weight: 500;
     font-size: .9em;
     font-family: 'Poppins';
 }
 
-.mobile-nav ul li.daerah a  
+/* There is something wrong here, why the line ::after on each navlist is not fit to the size of the text */
+/* so this is why i just comment it for now, because its kinda weird fot the ui */
+/* .mobile-nav ul li a::after 
 {
-    display: flex;
-    align-items: center;
-} 
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--main-green);
+    transform: scale(0);
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.mobile-nav ul li a:hover::after
+{
+    transform: scale(1);
+}  */
+
+.mobile-nav ul li a:active
+{
+    color: var(--secondary-green);
+}
 
 .mobile-nav ul li.daerah a .fa-search 
 {
     color: var(--main-orange);
-    margin-left: .3rem;
+    transition: .3s;
+}
+
+.mobile-nav ul li.daerah a:active .fa-search
+{
+    color: var(--secondary-orange);
+} 
+
+.search-daerah
+{
+    position: absolute;
+    z-index: 40;
+    top: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: .5s;
+}
+
+.search-daerah.openList
+{
+    box-shadow: 0 2px 8px rgba(70, 51, 51, .16);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: var(--white);
+}
+
+.search-daerah.open 
+{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.search-daerah .search 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(70, 51, 51, .16);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: .5rem 0rem;
+    padding-right: .8rem;
+    width: 320px;
+    background: var(--white);
+}
+
+.search-daerah .search.openList
+{
+    box-shadow: none;
+    border-radius: none;
+}
+
+.search-daerah .search .type-container 
+{
+    position: relative;
+}
+
+.search-daerah .search .type-container input 
+{
+    color: var(--main-navy);
+    font-weight: 500;
+    padding: .5rem .8rem;
+    border: none;
+    outline-style: none;
+} 
+
+.search-daerah .search .type-container span 
+{
+    position: absolute;
+    left: .8rem;
+    top: .5rem;
+    text-transform: capitalize;
+    color: var(--gray);
+    pointer-events: none;
+}
+
+.search-daerah .search .type-container input:focus ~ span, 
+.search-daerah .search .type-container input:valid ~ span 
+{
+    display: none;
+}
+
+.search-daerah .search .fa-times
+{
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.search-daerah .recommendation-list
+{
+    width: 100%;
+    background: var(--white);
+    padding: .8rem;
+    transform: translateY(-8px);
+}
+
+.search-daerah .recommendation-list ul li
+{
+    color: var(--main-navy);
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: .5s;
+}
+
+.search-daerah .recommendation-list ul li.hide 
+{
+    display: none;
+}
+
+.search-daerah .recommendation-list ul li:hover
+{
+    color: var(--main-green)
+}
+
+main 
+{
+    min-height: 100vh;
 }
 
 .hero 
@@ -161,6 +328,117 @@ header .hamburger .bar:nth-child(2)
     background-image: linear-gradient(0deg, rgba(0,0,0, .4), rgba(0,0,0, .4)), url(../../assets/img/hero-pict.png);
 }
 
+footer 
+{
+    background: var(--main-navy);
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+footer * 
+{
+    text-transform: capitalize;
+}
+
+footer h1, footer .gmaps-caption 
+{
+    color: var(--secondary-green);
+    font-weight: 700;
+}
+
+footer .top a 
+{
+    color: var(--white);
+}
+
+.top 
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6rem;
+}
+
+.top .gmaps 
+{
+    margin-bottom: 3rem;
+}
+
+.top .gmaps iframe 
+{
+    width: 100%;
+    height: 200px;
+}
+
+.top .gmaps .gmaps-caption
+{
+    font-size: .8em;
+} 
+
+.top .footer-content 
+{
+    display: grid;
+    gap: 3rem;
+}
+
+.top .footer-content h1 
+{
+    font-size: 1.3em;
+    margin-bottom: .5rem;
+}
+
+.top .footer-content ul li
+{
+    margin-bottom: .5rem;
+}
+
+.top .footer-content ul li a 
+{
+    font-size: 1em;
+    transition: .3s;
+}
+
+.top .footer-content ul li .fab 
+{
+    font-size: 2.25em;
+    transition: .3s;
+    margin-right: .5rem;
+}
+
+.top .footer-content ul li a:hover, 
+.top .footer-content ul li a:hover .fab 
+{
+    color: var(--secondary-green);
+}
+
+.bottom > * 
+{
+    text-align: center;
+}
+
+.bottom .copyright 
+{
+    color: var(--main-orange);
+    font-size: .8em;
+    font-weight: 500;
+}
+
+.bottom .full-credit a
+{
+    color: var(--secondary-orange);
+    font-size: .8em;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 576px)
+{
+    .top .footer-content 
+    {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media screen and (min-width: 768px)
 {
     header, footer 
@@ -168,10 +446,16 @@ header .hamburger .bar:nth-child(2)
         padding: 0 2.5rem;
     }
 
+    header 
+    {
+        box-shadow: 0 4px 8px rgba(0,0,0,.08);
+    }
+
     header .normal-nav 
     {
         display: block;
     }
+    
     
     header .normal-nav ul 
     {
@@ -184,25 +468,77 @@ header .hamburger .bar:nth-child(2)
         margin-left: 1.8rem;
     }
 
-    header .normal-nav ul a 
+    header .normal-nav ul li a 
     {
         text-transform: capitalize;
-        color: var(--white);
+        transition: color .3s;
+        color: var(--main-green);
         font-weight: 500;
         font-size: .8em;
         font-family: 'Poppins';
     }
 
-    header .normal-nav ul li.daerah a  
+    header .normal-nav ul li a::after 
     {
-        display: flex;
-        align-items: center;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--main-green);
+        transform: scale(0);
+        transition: .3s;
+        border-radius: 10px;
+    }
+
+    header .normal-nav ul li a:hover::after
+    {
+        transform: scale(1);
     } 
+
+    header .normal-nav ul li a:active
+    {
+        color: var(--secondary-green);
+    }
+
+    header .normal-nav ul li a:active::after 
+    {
+        background: var(--secondary-green)
+    }
 
     header .normal-nav ul li.daerah a .fa-search 
     {
         color: var(--main-orange);
-        margin-left: .3rem;
+        margin-left: 0;
+    }
+
+    header .normal-nav ul li.daerah a:active .fa-search
+    {
+        color: var(--secondary-orange);
+    } 
+
+    .normal-nav .search-daerah 
+    {
+        right: 3rem;
+        top: 3.5rem;
+    }
+
+    .normal-nav .search-daerah .recommendation-list ul 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .normal-nav .search-daerah .recommendation-list ul li 
+    {
+        width: 100%;
+        margin: 0;
+        padding: .5rem 0;
+    }
+
+    .normal-nav .search-daerah .recommendation-list ul li.hide
+    {
+        display: none;
     }
 
     header .hamburger 
@@ -213,6 +549,35 @@ header .hamburger .bar:nth-child(2)
     .mobile-nav 
     {
         display: none;
+    }
+
+    footer 
+    {
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+    }
+
+    .top 
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .top .gmaps 
+    {
+        width: 55%;
+    }
+
+    .top .gmaps iframe
+    {
+        height: 250px;
+    }
+
+    .top .footer-content 
+    {
+        width: 40%;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 
 }
@@ -226,11 +591,62 @@ header .hamburger .bar:nth-child(2)
 
     header .normal-nav ul li
     {
-        margin-left: 2.3rem;
+        margin-left: 2.5rem;
     }
 
-    header .normal-nav ul a 
+    header .normal-nav ul li a 
     {
         font-size: .9em;
+    }
+
+    .normal-nav .search-daerah 
+    {
+        right: 8.5rem;
+    }
+
+    .hero 
+    {
+        height: 60vh;
+    }
+
+    footer 
+    {
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px)
+{
+    .top .gmaps 
+    {
+        width: 50%;
+    }
+
+    .top .footer-content 
+    {
+        width: 45%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 1280px)
+{
+    .top 
+    {
+        justify-content: flex-start;
+    }
+
+    .top .gmaps 
+    {
+        width: 30%;
+    }
+
+    .top .footer-content 
+    {
+        width: 65%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        margin-left: 3rem;
     }
 }
