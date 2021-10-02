@@ -80,3 +80,11 @@ window.addEventListener("load", () => {
         }
     })
 })
+
+// loading animation 
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader")
+    const body = document.querySelector("body")
+    loader.classList.add("stop")
+    body.style.overflow = "auto"
+})
