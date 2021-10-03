@@ -2,6 +2,7 @@
     BUG:
     1. Mobile Nav List (::after) => width not fit to the text
     2. 768px header box-shadow => if the header.openNav, then the 786px header will don't have the box-shadow too (we don't want this things happen)
+    3. Sometimes, the waves illustration did not fill the width of the page. I already fix it with making the width bigger than the page, and make the position slightly more to the left. (and make the body overflow-x is hidden, because if its not, then there will a horizontal scrollbar displayed automaticly) But just keep lookin on it in the future
 */
 
 /* NOTE
@@ -23,6 +24,7 @@
     --secondary-green: #CBF3F0;
     --main-orange: #FF9F1C;
     --secondary-orange: #FFBF69; 
+    --instagram-red: #fb3958;
 }
 
 * 
@@ -40,7 +42,8 @@ html
 
 body 
 {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 a 
@@ -93,7 +96,7 @@ ul, li
     }
 }
 
-header, footer, .hero, .mobile-nav
+header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign, .mobile-nav
 {
     padding: 0 1.5rem;
 }
@@ -102,6 +105,7 @@ header, footer, .hero, .mobile-nav
 {
     position: fixed;
     z-index: 50;
+    top: 0;
     width: 100%;
 }
 
@@ -421,6 +425,529 @@ main
     background: var(--secondary-green);
 }
 
+/* Recent Blog and Trending and Add Blog */
+.recent-tna
+{
+    margin: 3.2rem 0;
+}
+
+.recent-blog > h1 
+{
+    text-transform: capitalize;
+    font-size: 1.35em;
+    color: var(--main-orange);
+}
+
+.blog-list > * 
+{
+    margin-top: 1.5rem;
+}
+
+.blog .blog-pict 
+{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blog-item 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-item .daerah-sign > *
+{
+    text-transform: capitalize;
+    margin-right: .5rem;
+}
+
+.blog-item .daerah-sign div 
+{
+    font-size: .9em;
+}
+
+.blog-item .daerah-sign .fa-caret-right 
+{
+    font-size: 1.5em;
+}
+
+.blog-item .daerah-sign 
+{
+    display: flex;
+    align-items: center;
+}
+
+.blog-item .content 
+{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.blog-item .content .left 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.blog-item .content .left .profile-pict 
+{
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.blog-item .content .left .like-btn 
+{
+    display: flex;
+    align-items: center;
+    margin-top: .5rem;
+    cursor: pointer;
+}
+
+.blog-item .content .left .like-btn .like 
+{
+    color: #d9d9d9;
+    font-size: 1.5em;
+    transition: .5s;
+}
+
+.blog-item .content .left .like-btn .like.clicked,
+.trending-blog-item .left .like-btn .like.clicked
+{
+  color: var(--instagram-red);
+  animation: click .3s;
+}
+
+@keyframes click 
+{
+  0% {transform: scale(0)}
+  100% {transform: scale(1)}
+}
+
+.blog-item .content .left .like-btn .like-number 
+{
+    margin-left: .25rem;
+    font-size: 1.05em;
+}
+
+.blog-item .content .right
+{
+    cursor: pointer;
+}
+
+.blog-item .content .right .b-title
+{
+    text-transform: capitalize;
+    font-size: 1.1em;
+}
+
+.blog-item .content .right .b-description 
+{
+    font-size: .75em;
+    font-weight: 400;
+}
+
+.tna-blog
+{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* trending card */
+.trending-blog 
+{
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 360px;
+    padding: 2rem 1.6rem;
+    background: var(--secondary-green);
+    border-radius: 1.5rem;
+    color: var(--main-navy);
+}
+
+.trending-blog h1 
+{
+    font-size: 1.5em;
+    text-transform: capitalize;
+    color: var(--main-green);
+    margin-bottom: 1rem;
+}
+
+.trending-blog-item 
+{
+    display: flex;
+    margin-top: 1.2rem;
+}
+
+.trending-blog-item .left 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.trending-blog-item .left .profile-pict 
+{
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.trending-blog-item .left .like-btn 
+{
+    display: flex;
+    align-items: center;
+    margin-top: .5rem;
+    cursor: pointer;
+}
+
+.trending-blog-item .left .like-btn .like 
+{
+    color: var(--white);
+    font-size: 1.35em;
+    transition: .5s;
+}
+
+.trending-blog-item .left .like-btn .like-number 
+{
+    margin-left: .25rem;
+    font-size: .8em;
+}
+
+.trending-blog-item .right  
+{
+    cursor: pointer;
+}
+
+.trending-blog-item .right .b-title
+{
+    text-transform: capitalize;
+    font-size: 1em;
+}
+
+.trending-blog-item .right .b-description 
+{
+    font-size: .75em;
+    font-weight: 400;
+}
+
+.add-blog 
+{
+    width: 100%;
+    max-width: 360px;
+    scroll-margin-top: 110px;
+}
+
+.add-blog h1 
+{
+    text-transform: capitalize;
+    color: var(--main-orange);
+    font-size: 1.2em;
+}
+
+.add-blog .input-item 
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    color: var(--main-navy);
+}
+
+.add-blog .input-item label  
+{
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: .25rem;
+}
+
+.add-blog .input-item input[type="text"]
+{
+    padding: .25rem;
+    font-size: 1em;
+    border: none;
+    outline-style: none;
+    border-bottom: 2px solid var(--main-orange);
+    width: 75%;
+    text-transform: capitalize;
+    transition: border-bottom-color .5s;
+}
+
+.add-blog .input-item input[type="text"]:focus,
+.add-blog .input-item input[type="text"]:valid 
+{
+    border-bottom-color: var(--main-green);
+}
+
+.add-blog .input-item input[type="file"]
+{
+    padding: .25rem;
+    color: var(--main-green);
+    cursor: pointer;
+}
+
+.add-blog .input-item textarea
+{
+    padding: 1rem 0 0 .5rem;
+    font-size: 1em;
+    border: none;
+    outline-style: none;
+    border-bottom: 2px solid var(--main-orange);
+    text-indent: .5rem;
+    height: 200px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background: #eeeeee;
+    transition: border-bottom-color .5s;
+}
+
+.add-blog .input-item textarea:focus,
+.add-blog .input-item textarea:valid 
+{
+    border-bottom-color: var(--main-green);
+}
+
+.add-blog .input-item input[type="submit"]
+{
+    padding: .8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--main-green);
+    color: var(--white);
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.add-blog .input-item input[type="submit"]:hover 
+{
+    background: var(--secondary-green);
+    color: var(--main-green);
+}
+
+
+/* About Blognesia */
+.our-vision .waves 
+{
+    width: 102%;
+}
+
+.our-vision .waves:first-child
+{
+    margin-bottom: -.5rem;
+}
+
+.our-vision .waves:last-child
+{
+    margin-top: -.25rem;
+    margin-left: -.5rem
+}
+
+.our-vision-content
+{
+    background: var(--main-navy);
+    min-height: 100vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.our-vision-content h1 
+{
+    text-transform: capitalize;
+    color: var(--white);
+    font-size: 1.3em;
+    margin-bottom: 2.4rem;
+}
+
+.our-vision-content h2 
+{
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--white);
+    font-size: 1em;
+
+}
+
+.textnimage .text p 
+{
+    color: var(--white);
+    margin-top: 1.2rem;
+    font-size: .8em;
+}
+
+.our-vision-content .image-container 
+{
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.our-vision-content .image 
+{   
+    width: 90%;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    box-shadow: -8px 8px 12px rgba(0,0,0,.24);
+    object-fit: cover;
+}
+
+.our-vision-content .image-background 
+{
+    width: 90%;
+    min-height: 200px;
+    height: 90%;
+    border-radius: 8px;
+    background: var(--white);
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+}
+
+.data-section 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.data-section * 
+{
+    text-align: center;
+}
+
+.data-section > * 
+{
+    margin-bottom: 3rem;
+}
+
+.data-section .data
+{
+    color: var(--white);
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
+
+.data-section img 
+{
+    width: 90px;
+}
+
+.data-section .data-number 
+{
+    font-size: 1.6em;
+}
+
+/* our chief */
+.our-chief 
+{
+    min-height: 50vh;
+    margin: 3rem 0 9rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.our-chief h2 
+{
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--main-green);
+    font-size: 1em;
+}
+
+.our-chief .card-container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container .chief-card
+{
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.card-container .chief-card img 
+{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* box-shadow: 4px 4px 16px rgba(0,0,0,.3); */
+}
+
+.chief-card .information 
+{
+    background: var(--main-green);
+    color: var(--white);
+    padding: .8rem 1rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* box-shadow: 4px 4px 16px rgba(0,0,0,.3); */
+}
+
+.information 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information h3 
+{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.information h4 
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.description 
+{
+    margin: 1.6rem 0;
+    text-align: center;
+}
+
+.information .social a 
+{
+    color: var(--white);
+    transition: color .3s;
+}
+
+.information .social a:hover 
+{
+    color: var(--secondary-green)
+}
+
+.information .social .fab 
+{
+    font-size: 2.4em;
+}
+
+.information .social .fab.fa-linkedin 
+{
+    margin: 0 .5rem;
+}
+
+/* FOOTER */
 footer 
 {
     background: var(--main-navy);
@@ -530,11 +1057,53 @@ footer .top a
     {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .our-vision-content .image 
+    {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 700px)
+{
+    .our-vision-content h2 
+    {
+        font-size: 1.2em;
+    }
+
+    .textnimage
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0 6rem 0;
+    }
+
+    .textnimage .image-container
+    {
+        width: 50%;
+        margin: 0;
+    }
+
+    .textnimage .text 
+    {
+        width: 45%;
+    }
+
+    .textnimage .text p
+    {
+        margin: 0 0 2rem 0;
+    }
+
+    .our-chief h2 
+    {
+        font-size: 1.2em;
+    }
 }
 
 @media screen and (min-width: 768px)
 {
-    header, footer, .hero 
+    header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign 
     {
         padding: 0 2.5rem;
     }
@@ -650,6 +1219,71 @@ footer .top a
         margin-bottom: 2rem;
     }
 
+    .blog-list .blog 
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .blog .blog-item 
+    {
+        width: 55%;
+    }
+
+    .blog .blog-pict 
+    {
+        width: 40%;
+        height: 140px;
+    }
+
+    .tna-blog
+    {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .add-blog 
+    {
+        margin-right: 1rem;
+    }
+
+    .data-section 
+    {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .data-section > * 
+    {
+        width: 30%;
+        margin: 3rem 0 0 0;
+    }
+
+    .data-section img 
+    {
+        width: 90px;
+    }
+
+    .our-chief .card-container 
+    {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card-container .chief-card
+    {
+        width: 32%;
+    }
+
+    .information p.description 
+    {
+        font-size: .8em;
+    }
+
     footer 
     {
         padding-top: 3rem;
@@ -683,7 +1317,7 @@ footer .top a
 
 @media screen and (min-width: 992px)
 {
-    header, footer, .hero 
+    header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign 
     {
         padding: 0 4rem;
     }
@@ -726,6 +1360,53 @@ footer .top a
         padding: 1.125rem;
     }
 
+    .recent-tna
+    {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 4rem;
+    }
+
+    .recent-blog
+    {
+        width: 62%;
+    }
+
+    .tna-blog
+    {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 35%;
+        margin: 0;
+    }
+
+    .add-blog
+    {
+        margin: 0;
+    }
+
+    .textnimage .image-container
+    {
+        width: 40%;
+    }
+
+    .textnimage .text 
+    {
+        width: 55%;
+    }
+
+    .textnimage .text p
+    {
+        font-size: 1.2em;
+    }
+
+    .our-chief .card-container
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
     footer 
     {
         padding-top: 3rem;
@@ -735,6 +1416,11 @@ footer .top a
 
 @media screen and (min-width: 1024px)
 {
+    .data-section img 
+    {
+        width: auto;
+    }
+
     .top .gmaps 
     {
         width: 50%;
@@ -749,6 +1435,11 @@ footer .top a
 
 @media screen and (min-width: 1280px)
 {
+    .blog-item .content .right .b-description 
+    {
+        font-size: .8em;
+    }
+
     .top 
     {
         justify-content: flex-start;
@@ -765,5 +1456,33 @@ footer .top a
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0;
         margin-left: 3rem;
+    }
+
+    .recent-blog
+    {
+        width: 65%;
+    }
+
+    .our-chief .card-container
+    {
+        justify-content: space-evenly;
+    }
+
+    .information p.description 
+    {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1440px)
+{
+    .blog-item .content .right .b-description 
+    {
+        font-size: 1em;
+    }
+
+    .trending-blog, .add-blog 
+    {
+        max-width: 425px;
     }
 }

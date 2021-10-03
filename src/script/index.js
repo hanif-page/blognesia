@@ -81,10 +81,26 @@ window.addEventListener("load", () => {
     })
 })
 
+// like button animation and like number getting increase
+const likeContainer = document.querySelectorAll(".like-btn")
+likeContainer.forEach(element => {
+    element.addEventListener("click", () => {
+      const like = element.childNodes[1]
+      const likeNumber = element.childNodes[3]
+      
+      like.classList.toggle("clicked")
+      let currentNum = +likeNumber.innerText;
+      if (like.classList.contains("clicked"))
+        {
+          likeNumber.innerText = currentNum + 1
+        } else likeNumber.innerText = currentNum - 1
+    }
+  )})
+
 // loading animation 
 window.addEventListener("load", () => {
     const loader = document.querySelector(".loader")
     const body = document.querySelector("body")
     loader.classList.add("stop")
-    body.style.overflow = "auto"
+    body.style.overflowY = "auto"
 })

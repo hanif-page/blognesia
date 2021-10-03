@@ -1,0 +1,31 @@
+main 
+{
+    margin: 8rem 0;
+}
+
+.daerah-sign > *
+{
+    text-transform: capitalize;
+    margin-right: .5rem;
+}
+
+.daerah-sign div 
+{
+    font-size: .9em;
+}
+
+.daerah-sign .fa-caret-right 
+{
+    font-size: 1.5em;
+}
+
+.daerah-sign 
+{
+    display: flex;
+    align-items: center;
+}
+
+main .recent-tna
+{
+    margin-top: 2.4rem;
+}

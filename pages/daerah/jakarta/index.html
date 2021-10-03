@@ -4,11 +4,354 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../assets/icons/B2.svg" type="image/svg+xml">
     <title>Blognesia | Jakarta</title>
+    <script src="https://kit.fontawesome.com/33a03a8209.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../src/styles/index.css">
     <link rel="stylesheet" href="../../../src/styles/jakarta.css">
+    <style>
+        main 
+        {
+            margin: 8rem 0;
+        }
+
+        .daerah-sign > *
+        {
+            text-transform: capitalize;
+            margin-right: .5rem;
+        }
+
+        .daerah-sign div 
+        {
+            font-size: .9em;
+        }
+
+        .daerah-sign .fa-caret-right 
+        {
+            font-size: 1.5em;
+        }
+
+        .daerah-sign 
+        {
+            display: flex;
+            align-items: center;
+        }
+
+        main .recent-tna
+        {
+            margin-top: 2.4rem;
+        }
+    </style>
 </head>
 <body>
+
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="header-container">
+        <header>
+            <h1 class="logo">
+                <a href="https://blognesia.netlify.app/">blognesia</a>
+            </h1>
+
+            <nav class="normal-nav">
+                <ul>
+                    <li><a href="../../../">home</a></li>
+                    <li class="daerah"><a href="">
+                        daerah 
+                        <i class="fas fa-search"></i>
+                    </a></li>
+                    <li><a href="">rank</a></li>
+                    <li><a href="">life at blognesia</a></li>
+                    <li><a href="">profile</a></li>
+                </ul>
+
+                <div class="search-daerah openList">
+                    <div class="search openList">
+                        <div class="type-container">
+                            <input type="text" name="" id="" required>
+                            <span>search . . .</span>
+                        </div>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="recommendation-list">
+                        <ul>
+                            <li style="color: var(--main-green); cursor: default;">jakarta</li>
+                            <li onclick="daerahPage(this.innerHTML)">bali</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </header>
+
+        <nav class="mobile-nav">
+            <ul class="">
+                <li><a href="../../../">home</a></li>
+                <li class="daerah"><a href="">
+                    daerah 
+                    <i class="fas fa-search"></i>
+                </a></li>
+                <li><a href="">rank</a></li>
+                <li><a href="">life at blognesia</a></li>
+                <li><a href="">profile</a></li>
+            </ul>
+
+            <div class="search-daerah openList">
+                <div class="search openList">
+                    <div class="type-container">
+                        <input type="text" name="" id="" required>
+                        <span>search . . .</span>
+                    </div>
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="recommendation-list">
+                    <ul>
+                        <li style="color: var(--main-green); cursor: default;" >jakarta</li>
+                        <li onclick="daerahPage(this.innerHTML)">bali</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <div class="daerah-sign">
+            <div>daerah</div>
+            <i class="fas fa-caret-right"></i>
+            <div>jakarta</div>
+        </div>
+
+        <div class="recent-tna">
+            <div class="recent-blog">
+                <h1>jakarta blog</h1>
+                <div class="blog-list">
+                    <div class="blog">
+                        <div class="blog-item">
+                            <div class="content">
+                                <div class="left">
+                                    <img src="../../../assets/profile-pict/1.jpg" alt="" class="profile-pict">
+                                    <div class="like-btn">
+                                        <i class="fas fa-heart like"></i>
+                                        <span class="like-number">44</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h3 class="b-title">macetnya ibukota Negara Indonesia</h3>
+                                    <p class="b-description">Minggu lalu, merupakan hari paling melelahkan bagi saya. Karena dihari itu, sepanjang jalan ke arah sudirman sangatlah macet....</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="../../../assets/blog-pict/jakarta/1.jpg" class="blog-pict" alt="">
+                    </div>
+                    <div class="blog">
+                        <div class="blog-item">
+                            <div class="content">
+                                <div class="left">
+                                    <img src="../../../assets/profile-pict/2.jpg" alt="" class="profile-pict">
+                                    <div class="like-btn">
+                                        <i class="fas fa-heart like clicked"></i>
+                                        <span class="like-number">40</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h3 class="b-title">pertama kali masuk ke dalam monas</h3>
+                                    <p class="b-description">Selama libur ujian, saya dan teman saya mencoba untuk pertama kalinya mengunjungi monas yang berlokasi di pusat Kota Jakarta....</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="../../../assets/blog-pict/jakarta/2.jpg" class="blog-pict" alt="">
+                    </div>
+                    <div class="blog">
+                        <div class="blog-item">
+                            <div class="content">
+                                <div class="left">
+                                    <img src="../../../assets/profile-pict/3.jpg" alt="" class="profile-pict">
+                                    <div class="like-btn">
+                                        <i class="fas fa-heart like"></i>
+                                        <span class="like-number">33</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h3 class="b-title">muter-muter di daerah kota tua</h3>
+                                    <p class="b-description">Setelah kami mengelilingi daerah kota tua, bisa dilihat bahwa masih banyak bangunan-bangunan tua di daerah ini yang membuat suasana seperti dizaman dahulu di Jakarta....</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="../../../assets/blog-pict/jakarta/3.jpg" class="blog-pict" alt="">
+                    </div>
+                    <div class="blog">
+                        <div class="blog-item">
+                            <div class="content">
+                                <div class="left">
+                                    <img src="../../../assets/profile-pict/4.jpg" alt="" class="profile-pict">
+                                    <div class="like-btn">
+                                        <i class="fas fa-heart like clicked"></i>
+                                        <span class="like-number">24</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h3 class="b-title">berolahraga di area gelora bung karno</h3>
+                                    <p class="b-description">Awalnya saya mengira gbk tidaklah seluas itu, tetapi ternyata setelah saya tiba di gbk, wow sangatlah luas dan....</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="../../../assets/blog-pict/jakarta/4.jpg" class="blog-pict" alt="">
+                    </div>
+                    <div class="blog">
+                        <div class="blog-item">
+                            <div class="content">
+                                <div class="left">
+                                    <img src="../../../assets/profile-pict/5.jpg" alt="" class="profile-pict">
+                                    <div class="like-btn">
+                                        <i class="fas fa-heart like"></i>
+                                        <span class="like-number">4</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h3 class="b-title">kondisi daerah pantai jakarta</h3>
+                                    <p class="b-description">Pohon-pohon mangrove disini berguna untuk mencega abrasi yang disebabkan oleh air laut. Ada beberapa rumah warga di area pantai ini....</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="../../../assets/blog-pict/jakarta/5.jpg" class="blog-pict" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="tna-blog">
+                <div class="trending-blog">
+                    <h1>trending jakarta blog</h1>
+                    <div class="trending-blog-list">
+                        <div class="trending-blog-item">
+                            <div class="left">
+                                <img src="../../../assets/profile-pict/3.jpg" alt="" class="profile-pict">
+                                <div class="like-btn">
+                                    <i class="fas fa-heart like"></i>
+                                    <span class="like-number">2500</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <h3 class="b-title">jajan kerak telur...</h3>
+                                <p class="b-description">Saya sangatlah jarang menemukan pedagang kerak telur yang berkeliling, tapi kali ini saya menemukannya di jalan.....</p>
+                            </div>
+                        </div>
+                        <div class="trending-blog-item">
+                            <div class="left">
+                                <img src="../../../assets/profile-pict/6.jpg" alt="" class="profile-pict">
+                                <div class="like-btn">
+                                    <i class="fas fa-heart like clicked"></i>
+                                    <span class="like-number">1200</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <h3 class="b-title">makan es krim legendaris ragusa...</h3>
+                                <p class="b-description">Setelah lama menunggu antrian, akhirnya saya bergilirah untuk memesan menu es krim yang ada disini.....</p>
+                            </div>
+                        </div>
+                        <div class="trending-blog-item">
+                            <div class="left">
+                                <img src="../../../assets/profile-pict/2.jpg" alt="" class="profile-pict">
+                                <div class="like-btn">
+                                    <i class="fas fa-heart like"></i>
+                                    <span class="like-number">580</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <h3 class="b-title">menyaksikan kawinan adat betawi...</h3>
+                                <p class="b-description">Kemarin, tetangga saya mengadakan kawinan di rumahnya dengan adat bali. Saat itu sangat ramai.....</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-blog" id="add-blog">
+                    <h1>tell your story about Jakarta culture</h1>
+                    <form action="" class="input-blog">
+                        <div class="input-item">
+                            <label for="">nama daerah</label>
+                            <input disabled style="background: var(--white); border-bottom-color: var(--main-green); cursor: not-allowed;" type="text" placeholder="Jakarta">
+                        </div>
+                        <div class="input-item">
+                            <label for="">judul blog</label>
+                            <input required type="text" placeholder="contoh : jajan kerak telur">
+                        </div>
+                        <div class="input-item">
+                            <label for="">foto / gambar situasi cerita</label>
+                            <input type="file" accept="image/*" value="Upload Photo">
+                        </div>
+                        <div class="input-item">
+                            <label for="">tulisan / konten blog</label>
+                            <textarea required type="" placeholder="Write Your Blog Here !"></textarea>
+                        </div>
+                        <div class="input-item">
+                            <input type="submit" value="Post Your Blog">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="top">
+            <div class="gmaps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2964267478733!2d106.80889711506921!3d-6.224590795494131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1505c76d775%3A0xe8503eecf84be674!2sSudirman%20Central%20Business%20District!5e0!3m2!1sen!2sid!4v1633173727575!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="gmaps-caption">Our Headquarters on Central Jakarta.</div>
+            </div>
+            <div class="footer-content">
+                <div class="contact-us">
+                    <h1>contact us</h1>
+                    <ul>
+                        <li><a href="">email</a></li>
+                        <li><a href="">call center</a></li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-instagram-square"></i>
+                            </a>
+                            <a href="">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-platform">
+                    <h1>about platform</h1>
+                    <ul>
+                        <li><a href="">terms of use</a></li>
+                        <li><a href="">privacy policy</a></li>
+                        <li><a href="">life at blognesia</a></li>
+                    </ul>
+                </div>
+                <div class="shareto-socmed">
+                    <h1>share to social media</h1>
+                    <ul>
+                        <li><a href="">twitter</a></li>
+                        <li><a href="">telegram</a></li>
+                        <li><a href="">whatsapp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="copyright">
+                copyright 2021 blognesia. all rights reserved
+            </div>
+            <div class="full-credit">
+                <a href="">click here for full credit</a>
+            </div>
+        </div>
+    </footer>
     
     <script src="../../../src/script/index.js"></script>
     <script src="../../../src/script/jakarta.js"></script>
