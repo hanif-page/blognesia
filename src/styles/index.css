@@ -97,7 +97,7 @@ ul, li
     }
 }
 
-header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign, .mobile-nav
+header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign, .rank-container, .mobile-nav
 {
     padding: 0 1.5rem;
 }
@@ -799,7 +799,7 @@ footer .top a
 
 @media screen and (min-width: 768px)
 {
-    header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign 
+    header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign, .rank-container 
     {
         padding: 0 2.5rem;
     }
@@ -972,7 +972,7 @@ footer .top a
 
 @media screen and (min-width: 992px)
 {
-    header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign 
+    header, footer, .recent-tna, .our-vision-content, .our-chief, .hero, main > .daerah-sign, .rank-container 
     {
         padding: 0 4rem;
     }
