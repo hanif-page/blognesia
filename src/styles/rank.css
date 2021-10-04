@@ -49,6 +49,11 @@ main .rank-container > *
     box-shadow: 6px 12px 12px rgba(0, 0, 0, .08);
 }
 
+.your-rank-card
+{
+    margin: 0;
+}
+
 .top-rank-card * 
 {
     text-align: center;
@@ -72,10 +77,11 @@ main .rank-container > *
 }
 
 .top-rank-card p,
-.your-rank-card p 
+.your-rank-card p
 {
     text-transform: capitalize;
     font-size: .7em;
+    text-align: center;
     color: var(--main-navy);
 }
 
@@ -149,14 +155,14 @@ main .rank-container > *
     border-radius: 10px;
 }
 
-.your-rank.rank-1-4
+.your-rank.rank-4-10
 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.your-rank.rank-1-4 > * 
+.your-rank.rank-4-10 > * 
 {
     margin-bottom: 3rem;
 }
@@ -164,6 +170,9 @@ main .rank-container > *
 .rank-4-10-container
 {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .rank-4-10-bar
@@ -171,24 +180,45 @@ main .rank-container > *
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .8rem;
+    padding: .8rem 1.2rem;
+    width: 100%;
+    max-width: 480px;
     background: var(--secondary-green);
     border-radius: 10px;
+    margin-bottom: .75rem;
 }
 
-.rank-4-10-bar .left   
+.rank-4-10-bar:last-child
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* width: 20% */
+    margin-bottom: 0;
 }
 
 .rank-4-10-bar h3 
 {
     color: var(--main-navy);
-    font-size: .8em;
+    font-size: .9em;
     text-transform: capitalize;
+    text-align: center;
+    width: 65px;
+}
+
+.rank-4-10-bar .userbar-profile
+{
+    display: flex;
+    align-items: center;
+}
+
+.rank-4-10-bar .userbar-profile .left
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rank-4-10-bar .userbar-profile .right 
+{
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
 
 .rank-4-10-bar .user-pp 
@@ -197,37 +227,37 @@ main .rank-container > *
     height: 48px;
     object-fit: cover;
     border-radius: 50%;
-    margin-top: .6rem;
+    margin-top: .2rem;
 }
 
 .rank-4-10-bar h4 
 {
     font-size: .8em;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--main-navy);
 }
 
 .rank-4-10-bar p 
 {
     color: var(--main-navy);
-    font-size: .7em;
+    font-size: .6em;
     text-transform: capitalize;
 }
 
-.rank-4-10-bar .right 
+.rank-4-10-bar .userbar-likesnviewers 
 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 80px;
+    margin-left: .5rem;
 }
 
-.rank-4-10-bar .right > *:first-child 
+.rank-4-10-bar .userbar-likesnviewers > *:first-child 
 {
     margin-bottom: .25rem;
 }
 
-.rank-4-10-bar .right > *:last-child 
+.rank-4-10-bar .userbar-likesnviewers > *:last-child 
 {
     margin-top: .25rem;
 }
@@ -237,17 +267,19 @@ main .rank-container > *
     margin: 0 .25rem;
 }
 
-.rank-4-10-bar .right .total-likes,
-.rank-4-10-bar .right .total-viewers
+.rank-4-10-bar .userbar-likesnviewers .total-likes,
+.rank-4-10-bar .userbar-likesnviewers .total-viewers
 {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 
 .rank-4-10-bar .total-likes .fa-heart 
 {
-    font-size: 1.5em;
+    font-size: 1em;
     color: var(--instagram-red);
 }
 
@@ -255,11 +287,12 @@ main .rank-container > *
 {
     color: var(--instagram-red);
     font-weight: 700;
+    font-size: .8em;
 }
 
 .rank-4-10-bar .total-viewers .fa-eye 
 {
-    font-size: 1.5em;
+    font-size: 1em;
     color: var(--main-green);
 }
 
@@ -267,6 +300,7 @@ main .rank-container > *
 {
     color: var(--main-green);
     font-weight: 700;
+    font-size: .8em;
 }
 
 /* for the top 3 rank between 480px to 700px */
@@ -299,6 +333,66 @@ main .rank-container > *
     .top3-rank.px576 .row-2 > *:nth-child(2)
     {
         margin-left: .5rem;
+    }
+}
+
+@media screen and (min-width: 520px)
+{
+    .rank-4-10-bar h3 
+    {
+        font-size: 1em;
+    }
+
+    .rank-4-10-bar .userbar-profile .right 
+    {
+        margin-left: 1.rem;
+        margin-top: 0;
+    }
+
+    .rank-4-10-bar .userbar-likesnviewers 
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin-left: 1.5rem;
+    }
+
+    .rank-4-10-bar .userbar-likesnviewers > *:first-child 
+    {
+        margin: 0;
+        margin-right: .5rem;
+    }
+
+    .rank-4-10-bar .userbar-likesnviewers > *:last-child 
+    {
+        margin: 0;
+        margin-left: .5rem;
+    }
+
+    .rank-4-10-bar .total-likes .fa-heart 
+    {
+        font-size: 1.3em;
+        color: var(--instagram-red);
+    }
+
+    .rank-4-10-bar .total-likes .like-number 
+    {
+        color: var(--instagram-red);
+        font-weight: 700;
+        font-size: .9em;
+    }
+
+    .rank-4-10-bar .total-viewers .fa-eye 
+    {
+        font-size: 1.3em;
+        color: var(--main-green);
+    }
+
+    .rank-4-10-bar .total-viewers .viewer-number 
+    {
+        color: var(--main-green);
+        font-weight: 700;
+        font-size: .9em;
     }
 }
 
@@ -338,11 +432,81 @@ main .rank-container > *
     }
 }
 
+@media screen and (min-width: 768px)
+{
+    .your-rank.rank-4-10
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    .your-rank.rank-4-10 > * 
+    {
+        margin-bottom: 0;
+    }
+
+    .rank-4-10-container
+    {
+        align-items: flex-end;
+    }
+}
+
+@media screen and (min-width: 800px)
+{
+    .your-rank.rank-4-10
+    {
+        justify-content: space-evenly;
+    }
+
+    .rank-4-10-container
+    {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 900px)
+{
+    .your-rank.rank-4-10
+    {
+        justify-content: center
+    }
+
+    .your-rank.rank-4-10 > *:first-child
+    {
+        margin-right: 1.2rem;
+    }
+
+    .your-rank.rank-4-10 > *:last-child
+    {
+        margin-left: 1.2rem;
+    }
+}
+
+
 @media screen and (min-width: 1080px)
 {
     .top-rank .top3-rank.row1-col3
     {
         justify-content: space-evenly;
+    }
+
+    .your-rank-card h3,
+    .your-rank-card h3,
+    .rank-4-10-bar h4
+    {
+        font-size: 1em;
+    }
+
+    .top3-rank .top-rank-card p,
+    .your-rank-card p,
+    .rank-4-10-bar p 
+    {
+        color: var(--main-navy);
+        font-size: .85em;
+        text-transform: capitalize;
     }
 }
 
