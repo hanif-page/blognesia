@@ -1,0 +1,419 @@
+.hero 
+{
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(0,0,0,.6), rgba(0,0,0, .4)), url(../../assets/img/hero-pict.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero > * 
+{
+    text-transform: capitalize;
+}
+
+.hero .main-title
+{
+    color: var(--white);
+    font-weight: 300;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 3rem 0 1.35rem 0;
+}
+
+.hero .secondary-title
+{
+    color: var(--secondary-green);
+    font-weight: 400;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.hero .hero-btn 
+{
+    padding: .8rem;
+    color: var(--secondary-green);
+    border: 1px solid var(--secondary-green);
+    transition: .3s;
+}
+
+.hero .hero-btn:hover 
+{
+    color: var(--main-green);
+    border: 1px solid var(--main-green);
+    background: var(--secondary-green);
+}
+
+/* About Blognesia */
+.our-vision .waves 
+{
+    width: 102%;
+}
+
+.our-vision .waves:first-child
+{
+    margin-bottom: -.5rem;
+}
+
+.our-vision .waves:last-child
+{
+    margin-top: -.25rem;
+    margin-left: -.5rem
+}
+
+.our-vision-content
+{
+    background: var(--main-navy);
+    min-height: 100vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.our-vision-content h1 
+{
+    text-transform: capitalize;
+    color: var(--white);
+    font-size: 1.3em;
+    margin-bottom: 2.4rem;
+}
+
+.our-vision-content h2 
+{
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--white);
+    font-size: 1em;
+
+}
+
+.textnimage .text p 
+{
+    color: var(--white);
+    margin-top: 1.2rem;
+    font-size: .8em;
+}
+
+.our-vision-content .image-container 
+{
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.our-vision-content .image 
+{   
+    width: 90%;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    box-shadow: -8px 8px 12px rgba(0,0,0,.24);
+    object-fit: cover;
+}
+
+.our-vision-content .image-background 
+{
+    width: 90%;
+    min-height: 200px;
+    height: 90%;
+    border-radius: 8px;
+    background: var(--white);
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+}
+
+.data-section 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.data-section * 
+{
+    text-align: center;
+}
+
+.data-section > * 
+{
+    margin-bottom: 3rem;
+}
+
+.data-section .data
+{
+    color: var(--white);
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
+
+.data-section img 
+{
+    width: 90px;
+}
+
+.data-section .data-number 
+{
+    font-size: 1.6em;
+}
+
+/* our chief */
+.our-chief 
+{
+    min-height: 50vh;
+    margin: 3rem 0 9rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.our-chief h2 
+{
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--main-green);
+    font-size: 1em;
+}
+
+.our-chief .card-container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container .chief-card
+{
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.card-container .chief-card img 
+{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* box-shadow: 4px 4px 16px rgba(0,0,0,.3); */
+}
+
+.chief-card .information 
+{
+    background: var(--main-green);
+    color: var(--white);
+    padding: .8rem 1rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* box-shadow: 4px 4px 16px rgba(0,0,0,.3); */
+}
+
+.information 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information h3 
+{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.information h4 
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.description 
+{
+    margin: 1.6rem 0;
+    text-align: center;
+}
+
+.information .social a 
+{
+    color: var(--white);
+    transition: color .3s;
+}
+
+.information .social a:hover 
+{
+    color: var(--secondary-green)
+}
+
+.information .social .fab 
+{
+    font-size: 2.4em;
+}
+
+.information .social .fab.fa-linkedin 
+{
+    margin: 0 .5rem;
+}
+
+@media screen and (min-width: 576px)
+{
+    .our-vision-content .image 
+    {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 700px)
+{
+    .our-vision-content h2 
+    {
+        font-size: 1.2em;
+    }
+
+    .textnimage
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0 6rem 0;
+    }
+
+    .textnimage .image-container
+    {
+        width: 50%;
+        margin: 0;
+    }
+
+    .textnimage .text 
+    {
+        width: 45%;
+    }
+
+    .textnimage .text p
+    {
+        margin: 0 0 2rem 0;
+    }
+
+    .our-chief h2 
+    {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .hero .main-title
+    {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    .data-section 
+    {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .data-section > * 
+    {
+        width: 30%;
+        margin: 3rem 0 0 0;
+    }
+
+    .data-section img 
+    {
+        width: 90px;
+    }
+
+    .our-chief .card-container 
+    {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card-container .chief-card
+    {
+        width: 32%;
+    }
+
+    .information p.description 
+    {
+        font-size: .8em;
+    }
+}
+
+@media screen and (min-width: 992px)
+{
+    .hero 
+    {
+        height: 60vh;
+    }
+
+    .hero .main-title
+    {
+        width: 80%;
+        font-size: 1.5em;
+    }
+
+    .hero .secondary-title
+    {
+        font-size: 1.125em;
+        margin-bottom: 1.3rem;
+    }
+
+    .hero .hero-btn 
+    {
+        font-size: 1.2em;
+        padding: 1.125rem;
+    }
+
+    .textnimage .image-container
+    {
+        width: 40%;
+    }
+
+    .textnimage .text 
+    {
+        width: 55%;
+    }
+
+    .textnimage .text p
+    {
+        font-size: 1.2em;
+    }
+
+    .our-chief .card-container
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px)
+{
+    .data-section img 
+    {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1280px)
+{
+    .our-chief .card-container
+    {
+        justify-content: space-evenly;
+    }
+
+    .information p.description 
+    {
+        font-size: 1em;
+    }
+}
