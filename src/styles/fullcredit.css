@@ -1,0 +1,112 @@
+main 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.credit-content 
+{
+    margin: 4rem 0;
+}
+
+.full-credit-container h1, h2
+{
+    text-transform: capitalize;
+}
+
+.full-credit-container h1
+{
+    color: var(--main-orange);
+}
+
+.full-credit-container h2 a 
+{
+    color: red;
+    border: .25rem solid red;
+    padding: 1rem;
+    transition: .5s;
+}
+
+.full-credit-container h2 a:hover 
+{
+    color: var(--white);
+    background: red;
+}
+
+.credit-content > * 
+{
+    margin-bottom: 1.2rem;
+}
+
+.credit-content a  
+{
+    transition: .3s;
+    text-decoration: underline;
+}
+
+.credit-content a:hover  
+{
+    opacity: .5;
+}
+
+.credit-content h3 
+{
+    color: var(--black);
+}
+
+.pixel-perfect 
+{
+    color: lime;
+}
+
+.flaticon 
+{
+    color: aqua;
+}
+
+.freepik 
+{
+    color: blue;
+}
+
+.undraw 
+{
+    color: #6100FF;
+}
+
+.unsplash 
+{
+    color: #828282;
+}
+
+.pexels 
+{
+    color: #05a081;
+}
+
+.pinterest 
+{
+    color: #e40424;
+}
+
+h3.made-by-hanif 
+{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.5em;
+}
+
+h3.made-by-hanif a 
+{
+    color: var(--main-green);
+}
+
+@media screen and (min-width: 768px)
+{
+    .credit-content h3 
+    {
+        font-size: 1.2em;
+    }
+}
