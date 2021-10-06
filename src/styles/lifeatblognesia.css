@@ -1,0 +1,344 @@
+.join-us > h1 
+{
+    color: var(--main-orange);
+    text-transform: capitalize;
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+}
+
+.joinus-content 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.joinus-content img 
+{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.joinus-content h2  
+{
+    font-size: 1.2em;
+    color: var(--main-green);
+    text-transform: capitalize;
+    margin-bottom: .25rem;
+}
+
+.joinus-content p 
+{
+    color: var(--main-navy);
+    line-height: 1.5;
+}
+
+.text > * 
+{
+    margin-bottom: 1.25rem;
+}
+
+.testimonial .waves 
+{
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.testimonial .waves:first-child
+{
+    margin-bottom: -.5rem;
+}
+
+.testimonial-content 
+{
+    background: var(--main-navy);
+    min-height: 100vh;
+}
+
+.testimonial .waves:last-child
+{
+    margin-top: -.25rem;
+    transform: rotate(180deg);
+}
+
+.testimonial-content
+{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.testimonial h1 
+{
+    font-size: 1.2em;
+    color: var(--white);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.testimonialcard-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonialcard-container2
+{
+    display: none;
+}
+
+.testimonial-card 
+{
+    padding: 1.5rem 2.2rem;
+    background: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    max-width: 300px;
+}
+
+.testimonial-card img 
+{
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.testimonial-card .profile-information 
+{
+    margin: 1rem 0;
+    color: var(--main-green);
+}
+
+.testimonial-card .message 
+{
+    font-size: .9em;
+    color: var(--main-navy);
+}
+
+.we-are-hiring h1 
+{
+    color: var(--main-orange);
+    text-transform: capitalize;
+    font-size: 1.2em;
+    margin: 3rem 0;
+}
+
+/* job card */
+.job-card-container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  perspective: 2000px;
+}
+
+.job-card 
+{
+  width: 100%;
+  min-width: 280px;
+  min-height: 250px;
+  max-width: 310px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.job-card.flip
+{
+  transform: rotateY(180deg);
+}
+
+.job-card > *
+{
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 12px 12px rgba(0,0,0,.12);
+  background: var(--secondary-green);
+  color: #333
+}
+
+.job-card-back 
+{
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.job-card-back a 
+{
+    text-transform: capitalize;
+    color: var(--main-navy);
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 1rem;
+    border: 3px solid var(--main-navy);
+    transition: .3s;
+}
+
+.job-card-back a:hover 
+{
+    color: var(--main-green);
+    border-color: var(--main-green);
+}
+
+.job-card-front 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.job-card-front h2 
+{
+    color: var(--main-green);
+    font-size: 1em;
+}
+
+.job-card-front .top 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.job-card-front img 
+{
+    width: 80px;
+}
+
+.job-card-front .job-desc
+{
+    font-size: .8em;
+    color: var(--main-navy);
+}
+
+@media screen and (min-width: 640px)
+{
+    .joinus-content 
+    {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .joinus-content .text 
+    {
+        width: 53%;
+    }
+
+    .joinus-content img 
+    {
+        width: 45%;
+    }
+
+    .testimonialcard-container
+    {
+        display: none;
+    }
+
+    .testimonialcard-container2
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonialcard-container2 .bottom
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+    }
+
+    .testimonialcard-container2 .bottom .uidesignintern 
+    {
+        margin-right: .5rem;
+    }
+
+    .testimonialcard-container2 .bottom .socialmediaspesialist
+    {
+        margin-left: .5rem;
+    }
+
+    .job-card-container
+    {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .job-card-container > *:first-child
+    {
+        margin-right: .5rem;
+    }
+
+    .job-card-container > *:last-child
+    {
+        margin-left: .5rem;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .testimonialcard-container
+    {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .we-are-hiring
+    {
+        margin-top: -3rem;
+    }
+}
+
+@media screen and (min-width: 992px)
+{
+    .job-card-container
+    {
+        justify-content: center
+    }
+
+    .job-card-container > *:first-child
+    {
+        margin-right: 2rem;
+    }
+
+    .job-card-container > *:last-child
+    {
+        margin-left: 2rem;
+    }
+
+}
+
+@media screen and (min-width: 1080px)
+{
+    .testimonialcard-container
+    {
+        display: flex;
+    }
+
+    .testimonialcard-container2
+    {
+        display: none;
+    }
+}
