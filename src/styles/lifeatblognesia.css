@@ -129,6 +129,20 @@
     margin: 3rem 0;
 }
 
+.profile-information h2 {
+    font-size: 1.3rem;
+}
+
+.profile-information h3 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.05em;
+}
+
+.profile-information h4 {
+    font-weight: 400;
+}
+
 /* job card */
 .job-card-container
 {
