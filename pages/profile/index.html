@@ -25,6 +25,7 @@
         main 
         {
             min-height: 100vh;
+            margin: 60px 0;
         }
     </style>
 </head>
@@ -111,7 +112,109 @@
     </div>
 
     <main>
+        <div class="topcover">
+            <span class="edit-icon">
+                <i class="fas fa-pen"></i>
+            </span>
+        </div>
 
+        <div class="p-container">
+            <a href="../login/" class="log-out">log out</a>
+        </div>
+
+        <div class="profile-container">
+
+            <div class="container">
+                <div class="account-profile">
+                    <div class="account-pp">
+                        <img src="../../assets/profile-pict/user-pp.jpg" alt="" class="profile-picture">
+                        
+                        <span class="edit-icon">
+                            <i class="fas fa-pen"></i>
+                        </span>
+                    </div>
+
+                    <div class="account-information">
+                        <h2 class="username">@usernameee</h2>
+                        <h3 class="full-name">M Ando Yartono</h3>
+                        <h4 class="status">sudah menulis sebanyak 1 blog</h4>
+                    </div>
+
+                    <div class="account-likenviewer">
+                        <div class="total-like">
+                            <i class="fas fa-heart"></i>
+                            <span class="number">21</span>
+                        </div>
+                        <div class="total-viewer">
+                            <i class="fas fa-eye"></i>
+                            <span class="number">157</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="recent-tna">
+                    <div class="your-blog recent-blog">
+                        <h1>your blog</h1>
+                        <div class="blog-list">
+                            <div class="blog">
+                                <div class="blog-item">
+                                    <div class="daerah-sign">
+                                        <div>daerah</div>
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>bali</div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="left">
+                                            <img src="../../assets/profile-pict/user-pp.jpg" alt="" class="profile-pict">
+                                            <div class="like-btn">
+                                                <i class="fas fa-heart like clicked"></i>
+                                                <span class="like-number">21</span>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <h3 class="b-title">menyaksikan tari kecak</h3>
+                                            <p class="b-description">Terakhir saya mengunjungi bali, salah satu penampilan yang paling unik dan berbeda adalah Tari Kecak. Saat menontonnya, saya sedikit ....</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../../assets/img/profile-topcover.jpg" class="blog-pict" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="addblog-illustrations tna-blog">
+
+                        <!-- add blognesia -->
+                        <div class="add-blog" id="add-blog">
+                            <h1>tell your story about Indonesian culture</h1>
+                            <form action="" class="input-blog">
+                                <div class="input-item">
+                                    <label for="">nama daerah</label>
+                                    <input required type="text" placeholder="contoh : Jakarta">
+                                </div>
+                                <div class="input-item">
+                                    <label for="">judul blog</label>
+                                    <input required type="text" placeholder="contoh : makan kerak telur">
+                                </div>
+                                <div class="input-item">
+                                    <label for="">foto / gambar situasi cerita</label>
+                                    <input type="file" accept="image/*" value="Upload Photo">
+                                </div>
+                                <div class="input-item">
+                                    <label for="">tulisan / konten blog</label>
+                                    <textarea required type="" placeholder="Write Your Blog Here !"></textarea>
+                                </div>
+                                <div class="input-item">
+                                    <input type="submit" value="Post Your Blog">
+                                </div>
+                            </form>
+                        </div>
+                        <img class="illustrations" src="../../assets/illustrations/addblog.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- all footer content and stuff -->

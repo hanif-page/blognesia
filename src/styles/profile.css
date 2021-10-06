@@ -1,0 +1,231 @@
+.topcover
+{
+    margin: 60px 0;
+    background-image: url(../../assets/img/profile-topcover.jpg);
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+}
+
+.edit-icon 
+{
+    padding: 5.5px 7px;
+    border-radius: 50%;
+    background: var(--main-navy);
+    cursor: pointer;
+}
+
+.topcover 
+{
+    position: relative;
+}
+
+.topcover .edit-icon
+{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+} 
+
+.edit-icon i 
+{
+    font-size: 1.2em;
+    color: var(--white);
+}
+
+.p-container 
+{
+    margin: 5rem 0;
+}
+
+.log-out
+{
+    color: red;
+    padding: .5rem .8rem;
+    border: 2px solid red;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.2em;
+    transition: .3s;
+}
+
+.log-out:hover 
+{
+    color: var(--white);
+    background: red;
+    font-weight: 600;
+}
+
+.profile-container 
+{
+    margin: 2rem 0;
+}
+
+.profile-container .account-profile 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5rem;
+    color: var(--main-navy);
+}
+
+.account-profile > * 
+{
+    margin-bottom: 1.5rem;
+}
+
+.account-pp 
+{
+    position: relative;
+}
+
+.account-pp img 
+{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--main-navy);
+}
+
+.account-pp .edit-icon
+{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+
+.account-information .username 
+{
+    font-size: 1.3em;
+}
+
+.account-information .full-name 
+{
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.account-information .status 
+{
+    font-weight: 400;
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: .8em;
+}
+
+.account-likenviewer
+{
+    display: flex;
+}
+
+.total-like,
+.total-viewer{
+    display: flex;
+    flex-direction: column;
+}
+
+.total-like
+{
+    margin-right: 1rem;
+}
+
+.total-like i 
+{
+    color: var(--instagram-red);
+    font-size: 2em;
+}
+
+.total-like .number
+{
+    color: var(--instagram-red);
+    font-weight: 700;
+}
+
+.total-viewer 
+{
+    margin-left: 1rem;
+}
+
+.total-viewer i
+{
+    color: var(--main-green);
+    font-size: 2em;
+}
+
+.total-viewer .number 
+{
+    color: var(--main-green);
+    font-weight: 700;
+}
+
+.blog 
+{
+    color: var(--main-navy);
+}
+
+.addblog-illustrations
+{
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.addblog-illustrations .illustrations
+{
+    display: none;    
+}
+
+@media screen and (min-width: 768px)
+{
+    .topcover
+    {
+        background-position: center;
+    }
+
+    .profile-container .account-profile 
+    {
+        margin-bottom: 0;
+    }
+
+    .addblog-illustrations
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .addblog-illustrations .illustrations
+    {
+        display: block;
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 992px) 
+{   
+    .account-information .status 
+    {
+        font-size: .9em;
+    }
+
+    .addblog-illustrations {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 35%;
+        margin: 0;
+    }
+
+    .addblog-illustrations {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 35%;
+        margin: 0;
+    }
+
+    .addblog-illustrations .illustrations
+    {
+        display: none;
+    }
+}
