@@ -266,6 +266,52 @@
     margin: 0 .5rem;
 }
 
+.educative-page-link 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0;
+}
+
+.educative-page-link a 
+{
+    font-size: 1.2em;
+    text-transform: capitalize;
+    color: var(--main-green);
+    transition: .3s;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.educative-page-link a:hover
+{
+    opacity: .5;
+}
+
+.educative-page-link a .fa-angle-double-right
+{
+    animation: move-right 1.5s infinite;
+    font-size: 1.3em;
+}
+
+@keyframes move-right 
+{
+    0% 
+    {
+        transform: translateX(8px);
+    }
+    50%
+    {
+        transform: translateX(1.2rem);
+    }
+    100% 
+    {
+        transform: translateX(8px);
+    }
+}
+
 @media screen and (min-width: 576px)
 {
     .our-vision-content .image 
