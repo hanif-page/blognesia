@@ -9,12 +9,6 @@
     <script src="https://kit.fontawesome.com/33a03a8209.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../src/styles/index.css">
     <link rel="stylesheet" href="../../src/styles/signup.css">
-    <style>
-        main 
-        {
-            min-height: 100vh;
-        }
-    </style>
 </head>
 <body>
     
@@ -98,8 +92,64 @@
         </nav>
     </div>
 
-    <main>
+    <main class="p-container">
+        <div class="signup-illustration">
+            <img src="../../assets/illustrations/signup.svg" alt="sign up illustration">
+        </div>
 
+        <div class="signup-container">
+            <div class="title">
+                <h2>sign up</h2>
+                <div class="alternative">
+                    already have an account ? <a href="../login/" class="login-link">log in</a>
+                </div>
+            </div>
+
+            <div class="signup">
+                <div class="instant-signup">
+                    <a target="_blank" href="https://google.com" class="btn-google">
+                        <img class="icon-btn" src="../../assets/icons/google.svg" alt="google icon">
+                        <span> <span style="color: var(--google-red)">sign</span> <span style="color: var(--google-orange)">up</span> <span style="color: var(--google-green)">with</span> <span style="color: var(--google-blue);">google</span> </span>
+                    </a>
+                    <a target="_blank" href="https://medium.com" class="btn-medium">
+                        <img class="icon-btn" src="../../assets/icons/medium.svg" alt="medium icon">
+                        <span>sign up with medium</span>
+                    </a>
+                </div>
+
+                <div class="or">
+                    <div class="line"></div>
+                    <span class="text">or</span>
+                    <div class="line"></div>
+                </div>
+
+                <form action="" class="input-form">
+                    <div class="input-email input-child">
+                        <input required type="text">
+                        <span>email</span>
+                    </div>
+
+                    <div class="input-new">
+                        <div class="input-username input-child">
+                            <input required type="text">
+                            <span>new username</span>
+                        </div>
+
+                        <div class="input-password input-child">
+                            <input required type="password">
+                            <span>new password</span>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-confirmation">
+                        <input id="checkbox" type="checkbox">
+                        <label for="checkbox">I Agree The Terms of Use and Privacy Policy.</label>
+                    </div>
+
+                    <a href="../../" class="btn-signup">sign Up</a>
+                </form>
+            </div>
+        </div>
     </main>
 
     <!-- all footer content and stuff -->
