@@ -9,12 +9,6 @@
     <script src="https://kit.fontawesome.com/33a03a8209.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../src/styles/index.css">
     <link rel="stylesheet" href="../../src/styles/login.css">
-    <style>
-        main 
-        {
-            min-height: 100vh;
-        }
-    </style>
 </head>
 <body>
     
@@ -98,8 +92,45 @@
         </nav>
     </div>
 
-    <main>
+    <main class="p-container container">
+        <div class="welcome-back">
+            <img src="../../assets/illustrations/login.svg" alt="login illustrations">
+        </div>
 
+        <div class="login-container">
+            <div class="title">
+                <h2>log in</h2>
+                <div class="alternative">
+                    don't have an account ? <a href="../signup/" class="signup-link">sign up</a>
+                </div>
+            </div>
+
+            <div class="login">
+                <div class="unknown-pp">
+                    <div class="head"></div>
+                    <div class="body"></div>
+                </div>
+
+                <form action="" class="input-form">
+                    <div class="input-text-container">
+                        <div class="input-text">
+                            <input required id="input-name" type="text">
+                            <label for="input-name" >username</label>
+                        </div>
+                        <div class="input-text">
+                            <input required id="input-password" type="password">
+                            <label for="input-password" >password</label>
+                        </div>
+                    </div>
+                    <div class="remember-me">
+                        <input id="rememberme-checkbox" type="checkbox">
+                        <label class="checkbox-text" for="rememberme-checkbox" >remember me</span>
+                    </div>
+                    <input onclick="homePage()" type="submit" value="login">
+                    <a href="#" class="forgot-password">forgot password ?</a>
+                </form>
+            </div>
+        </div>
     </main>
 
     <!-- all footer content and stuff -->

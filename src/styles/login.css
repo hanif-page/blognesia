@@ -1,0 +1,309 @@
+main.p-container.container
+{
+    min-height: 100vh;
+}
+
+.p-container.container 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.welcome-back
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-back h1 
+{
+    color: var(--main-orange);
+    text-transform: capitalize;
+    font-size: 1.5em;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.welcome-back img 
+{
+    width: 100%;
+    display: none;
+}
+
+.login-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+}
+
+.login-container > * 
+{
+    width: 100%;
+}
+
+.login-container .title 
+{
+    margin-bottom: 2rem;
+}
+
+.login-container .title h2 
+{
+    color: var(--main-navy);
+    text-transform: capitalize;
+    font-size: 1.5em;
+}
+
+.login-container .title .alternative
+{
+    text-transform: capitalize;
+    color: var(--main-navy);
+} 
+
+.login-container .title .alternative .signup-link 
+{
+    color: var(--main-green);
+    transition: .3s;
+}
+
+.login-container .title .alternative .signup-link:hover 
+{
+    opacity: .7;
+}
+
+.login
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unknown-pp
+{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 1px solid var(--main-navy);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.unknown-pp .head 
+{
+    width: 32px;
+    height: 32px;
+    background: var(--main-navy);
+    border-radius: 50%;
+    position: absolute;
+    margin-bottom: 1rem;
+}
+
+.unknown-pp .body 
+{
+    width: 72px;
+    height: 72px;
+    background: var(--main-navy);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -50px;
+}
+
+.input-form 
+{
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.input-form > * 
+{
+    margin-top: .5rem;
+}
+
+.input-text
+{
+    margin-top: 1.9rem;
+    position: relative;
+}
+
+.input-text label
+{
+    font-size: 1.025em;
+    color: var(--main-navy);
+    opacity: .5;
+    font-weight: 400;
+    transition: .3s;
+    text-transform: capitalize;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: .6rem;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.input-text input 
+{
+    padding: .4rem .6rem;
+    width: 100%;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid var(--main-navy);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    color: var(--black);
+    transition: .3s;
+}
+
+.input-text input:focus,
+.input-text input:valid
+{
+    border-color: var(--main-green);
+}
+
+.input-text input:focus ~ label,
+.input-text input:valid ~ label
+{
+    top: -1.4rem;
+    left: 0;
+    color: var(--main-navy);
+    opacity: 1;
+}
+
+
+.remember-me .checkbox-text
+{
+    color: var(--main-green); 
+    text-transform: capitalize; 
+    cursor: pointer;
+    transition: .3s;
+}
+
+.remember-me .checkbox-text:hover 
+{
+    opacity: .7;
+}
+
+.input-form input[type="submit"]
+{
+    width: 100%;
+    padding: .7rem 0;
+    border: none;
+    border-radius: 0;
+    font-size: 1.2em;
+    color: var(--white);
+    font-weight: 700;
+    text-transform: capitalize;
+    background: var(--main-green);
+    cursor: pointer;
+    border: 1px solid var(--main-green);
+    transition: .3s;
+}
+
+.input-form input[type="submit"]:hover 
+{
+    background: white;
+    color: var(--main-green);
+}
+
+.input-form input[type="submit"]:active 
+{
+    opacity: .5;
+}
+
+.input-form .forgot-password
+{
+    color: var(--main-green);
+    text-align: center;
+    display: block;
+    font-style: italic;
+    transition: .3s
+}
+
+.input-form .forgot-password:hover 
+{
+    opacity: .7;
+}
+
+@media screen and (min-width: 640px)
+{
+    .p-container.container
+    {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .welcome-back 
+    {
+        width: 45%;
+        min-height: 450px;
+        max-width: 360px;
+    }
+
+    .welcome-back img 
+    {
+        display: block;
+    }
+
+    .login-container
+    {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 890px)
+{
+    .login-container {
+        max-width: 500px;
+    }
+
+    .input-text-container
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .input-text
+    {
+        width: 49%;
+    }
+}
+
+@media screen and (min-width: 1080px)
+{
+    .login-container {
+        max-width: 500px;
+    }
+
+}
+
+@media screen and (min-width: 1080px)
+{
+    .p-container.container
+    {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1280px)
+{
+    .p-container.container
+    {
+        justify-content: space-evenly;
+    }
+}
+
