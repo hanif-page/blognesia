@@ -1,0 +1,143 @@
+.cover 
+{
+    height: 50vh;
+    margin-top: 80px;
+    background: url(../../assets/img/educativepage-cover.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.educative-page 
+{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.educative-page h1 
+{
+    font-size: 1.5rem;
+    color: var(--main-orange);
+    text-transform: capitalize;
+}
+
+.educative-page h2 
+{
+    font-size: 1.2em;
+    color: var(--main-navy);
+    text-transform: capitalize;
+}
+
+.educativepage-container
+{
+    margin-top: 4rem;
+}
+
+.educativepage-content .text p
+{
+    text-indent: 1.5rem;
+    font-size: .95em;
+    color: var(--main-navy);
+    margin-top: 1.5rem;
+}
+
+.text p .blognesia 
+{
+    font-size: 1.2em;
+    color: var(--main-green);
+    font-weight: 700;
+    transition: .3s;
+}
+
+.text p .blognesia:hover 
+{
+    opacity: .5;
+}
+
+.educativepage-content .text .kunjungi-home
+{
+    text-decoration: underline;
+    color: var(--main-green);
+    display: block;
+    margin-top: 1rem;
+    transition: .3s;
+}
+
+.educativepage-content .text .kunjungi-home:hover 
+{
+    opacity: .5;
+}
+
+.image 
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.image .image-child 
+{
+    overflow: hidden;
+    box-shadow: 4px 4px 12px rgba(0,0,0,.25);
+    cursor: zoom-in;
+}
+
+.image .image-child:hover img 
+{
+    transform: scale(1.5);
+}
+
+.image .image-child
+{
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.image .image-child:last-child
+{
+    margin-top: 3rem;
+}
+
+.image img 
+{
+    transition: .5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (min-width: 768px)
+{
+    .educative-page h2 
+    {
+        text-align: center;
+    }
+
+    .educativepage-content
+    {
+        display: flex;
+        justify-content: space-between;
+        margin-top: .5rem;
+    }
+
+    .educativepage-content .text 
+    {
+        width: 50%;
+    }
+
+    .educativepage-content .image 
+    {
+        width: 45%;
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1280px)
+{
+    .educativepage-content .text p
+    {
+        font-size: 1.1em;
+    }
+
+}
