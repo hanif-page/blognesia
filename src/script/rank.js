@@ -196,3 +196,45 @@ const openTouchSlider = (imageID) => {
     }
 }
 
+// ANIMATE ON SCROLL 
+const top3Rank = document.querySelectorAll(".top-rank-card")
+const rank4to10 = document.querySelectorAll(".rank-4-10-bar")
+const yourRank = document.querySelector(".your-rank-card")
+const imageOnGallery = document.querySelectorAll("main .blog-photos-container img")
+
+// offset for customize on what height I want to make the animation active
+const elInView = (el, offset) => {
+    let elementTop = el.getBoundingClientRect().top
+    
+    // return true of false
+    return (
+        elementTop <= ((window.innerHeight || document.documentElement.clientHeight) - offset)
+    )
+}
+
+const addAnimation = (el) => el.classList.add("animationScrolled")
+
+const removeAnimation = (el) => el.classList.remove("animationScrolled")
+
+const runAnimation = () => {
+    if (elInView(yourRank, 100)) addAnimation(yourRank)
+
+    // I keep all the forEach function above with normal syntax (not a one liner), because I want to keep it readable  
+    top3Rank.forEach(top3 => {
+        if(elInView(top3, 100)) addAnimation(top3)
+    })
+
+    rank4to10.forEach(rank4to10bar => {
+        if(elInView(rank4to10bar, 100)) addAnimation(rank4to10bar)
+    })
+
+    imageOnGallery.forEach(img => {
+        if(elInView(img, 100)) addAnimation(img)
+    })
+}
+
+window.addEventListener("scroll", () => {
+    runAnimation()
+})
+// ANIMATE ON SCROLL
+

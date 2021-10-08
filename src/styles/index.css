@@ -1,9 +1,6 @@
 /* 
     BUG:
-    1. Mobile Nav List (::after) => width not fit to the text
-    2. 768px header box-shadow => if the header.openNav, then the 786px header will don't have the box-shadow too (we don't want this things happen)
-    3. Sometimes, the waves illustration did not fill the width of the page. I already fix it with making the width bigger than the page, and make the position slightly more to the left. (and make the body overflow-x is hidden, because if its not, then there will a horizontal scrollbar displayed automaticly) But just keep lookin on it in the future
-    4. Di home page, yang bagian background warna main-navy, itu kyk ga menuhin layar. Kyknya karena gw kasih margin juga deh. Ntar benerin jangan lupa !
+    1. 768px header box-shadow => if the header.openNav, then the 786px header will don't have the box-shadow too (we don't want this things happen)
 */
 
 /* NOTE

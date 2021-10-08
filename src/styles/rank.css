@@ -804,3 +804,64 @@ main .image-container-desktop
         font-size: 2em;
     }
 }
+
+/* ANIMATION ON SCROLL */
+
+/* I just want the animation for top-rank-card active when the screen is above 480px */
+@media screen and (max-width: 480px)
+{
+    .top-rank-card
+    {
+        opacity: 0;
+        transform: translateY(2.5rem);
+        transition: 1s;
+    }
+    
+    .top-rank-card.animationScrolled
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rank-4-10-bar
+{
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition: 1s;
+}
+
+.rank-4-10-bar.animationScrolled
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.your-rank-card
+{
+    opacity: 0;
+    transform: translateX(-3rem);
+    transition: 1s;
+}
+
+.your-rank-card.animationScrolled
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+main .blog-photos-container img
+{
+    opacity: .1;
+    transition: 1s;
+}
+
+main .blog-photos-container img.animationScrolled 
+{
+    opacity: 1;
+}
+
+main .blog-photos-container img.animationScrolled:hover 
+{
+    opacity: .5;
+}
