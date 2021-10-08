@@ -356,3 +356,73 @@
         display: none;
     }
 }
+
+/* ANIMATION ON SCROLL */
+.joinus-content img 
+{
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: 1s;
+}
+
+.joinus-content img.animationScrolled
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.joinus-content h2,
+.testimonial h1
+{
+    opacity: 0;
+    transform: translateX(-1.6rem);
+    transition: 1s .5s;
+}
+
+.joinus-content h2.animationScrolled,
+.testimonial h1.animationScrolled
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.joinus-content p,
+.testimonial .testimonial-card
+{
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: 1s .8s;
+}
+
+.joinus-content p.animationScrolled,
+.testimonial .testimonial-card.animationScrolled
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.job-card-container .job-card:first-child
+{
+    opacity: 0;
+    transform: translateX(-2rem);
+    transition: 1s .5s;
+}
+
+.job-card-container .job-card:last-child
+{
+    opacity: 0;
+    transform: translateX(2rem);
+    transition: 1s .5s;
+}
+
+.job-card-container .job-card.animationScrolled
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* if I put this style on the top, it won't want to get flipped :) */
+.job-card-container .job-card.flip
+{
+  transform: rotateY(180deg);
+}
