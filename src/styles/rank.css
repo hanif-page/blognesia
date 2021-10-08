@@ -837,6 +837,17 @@ main .image-container-desktop
     transform: translateY(0);
 }
 
+.line-break
+{
+    transform: scale(0);
+    transition: .8s;
+}
+
+.line-break.animationScrolled 
+{
+    transform: scale(1);
+}
+
 .your-rank-card
 {
     opacity: 0;

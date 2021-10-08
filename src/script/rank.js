@@ -198,6 +198,7 @@ const openTouchSlider = (imageID) => {
 
 // ANIMATE ON SCROLL 
 const top3Rank = document.querySelectorAll(".top-rank-card")
+const lineBreak = document.querySelector(".line-break")
 const rank4to10 = document.querySelectorAll(".rank-4-10-bar")
 const yourRank = document.querySelector(".your-rank-card")
 const imageOnGallery = document.querySelectorAll("main .blog-photos-container img")
@@ -218,6 +219,7 @@ const removeAnimation = (el) => el.classList.remove("animationScrolled")
 
 const runAnimation = () => {
     if (elInView(yourRank, 100)) addAnimation(yourRank)
+    if (elInView(lineBreak, 100)) addAnimation(lineBreak)
 
     // I keep all the forEach function above with normal syntax (not a one liner), because I want to keep it readable  
     top3Rank.forEach(top3 => {
