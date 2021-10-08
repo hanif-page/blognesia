@@ -31,12 +31,12 @@ const removeAnimation = (el) => el.classList.remove("animationScrolled")
 const runAnimation = () => {
     if(elInView(aboutBlognesia, 100)) addAnimation(aboutBlognesia)
     if (elInView(ourVision, 100)) addAnimation(ourVision)
-    if (elInView(ourVisionImage, 100)) addAnimation(ourVisionImage)
+    if (elInView(ourVisionImage, 150)) addAnimation(ourVisionImage)
 
     // I keep all the forEach function above with normal syntax (not a one liner), because I want to keep it readable  
 
     ourVisionParagraph.forEach(paragraph => {
-        if(elInView(paragraph, 100)) addAnimation(paragraph)
+        if(elInView(paragraph, 150)) addAnimation(paragraph)
     })
 
     dataIcons.forEach(dataIcon => {
@@ -45,7 +45,7 @@ const runAnimation = () => {
 
     // the counting animation
     dataNumberElements.forEach(dataNumber => {
-        if(elInView(dataNumber, 0)) addAnimation(dataNumber)
+        if(elInView(dataNumber, 100)) addAnimation(dataNumber)
     })
     
     ourChiefCards.forEach(ourChiefCard => {

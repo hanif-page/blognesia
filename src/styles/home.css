@@ -471,24 +471,27 @@
 }
 
 /* ANIMATE ON SCROLL */
-.our-vision-content h1
+/* .our-vision-content h1
 {
+    opacity: 0;
+    transform: translateX(-2rem);
+    transition: 1s;
+} */
+
+.our-vision-content h2
+{
+    /* opacity: 0;
+    transform: translateY(-2rem);
+    transition: 1s .5s; */
     opacity: 0;
     transform: translateX(-2rem);
     transition: 1s;
 }
 
-.our-vision-content h2
-{
-    opacity: 0;
-    transform: translateY(-2rem);
-    transition: 1s .5s;
-}
-
 .our-vision-content h2.animationScrolled
 {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .textnimage p
