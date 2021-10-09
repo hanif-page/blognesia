@@ -217,15 +217,20 @@ const addAnimation = (el) => el.classList.add("animationScrolled")
 
 const removeAnimation = (el) => el.classList.remove("animationScrolled")
 
-const runAnimation = () => {
+const runAnimationLoad = () => {
+    top3Rank.forEach(top3 => {
+        if(elInView(top3, 100)) addAnimation(top3)
+    })
+}
+
+const runAnimationScroll = () => {
+    // in case there is an element that didn't get animated when loaded, then it will be or still get animated when get scrolled
+    runAnimationLoad()
+
     if (elInView(yourRank, 100)) addAnimation(yourRank)
     if (elInView(lineBreak, 100)) addAnimation(lineBreak)
 
     // I keep all the forEach function above with normal syntax (not a one liner), because I want to keep it readable  
-    top3Rank.forEach(top3 => {
-        if(elInView(top3, 100)) addAnimation(top3)
-    })
-
     rank4to10.forEach(rank4to10bar => {
         if(elInView(rank4to10bar, 100)) addAnimation(rank4to10bar)
     })
@@ -235,8 +240,7 @@ const runAnimation = () => {
     })
 }
 
-window.addEventListener("scroll", () => {
-    runAnimation()
-})
+window.addEventListener("load", () => { runAnimationLoad() })
+window.addEventListener("scroll", () => { runAnimationScroll() })
 // ANIMATE ON SCROLL
 
