@@ -419,6 +419,7 @@
 {
     opacity: 1;
     transform: translateX(0);
+    transition: 1s;
 }
 
 /* if I put this style on the top, it won't want to get flipped :) */
