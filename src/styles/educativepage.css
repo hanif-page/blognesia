@@ -178,7 +178,7 @@
 {
     opacity: 0;
     transform: translateY(2rem);
-    transition: 1.2s;
+    transition: 1.2s .5s;
 }
 
 .educativepage-content .text > *.animationScrolled
