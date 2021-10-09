@@ -12,6 +12,7 @@ const ourVisionImage = document.querySelector(".textnimage .image-container")
 const ourVisionParagraph = document.querySelectorAll(".textnimage p")
 const dataIcons = document.querySelectorAll(".data-icon")
 const dataNumberElements = document.querySelectorAll(".data-number span")
+const ourChief = document.querySelector(".our-chief h2")
 const ourChiefCards = document.querySelectorAll(".chief-card")
 
 // offset for customize on what height I want to make the animation active
@@ -32,6 +33,7 @@ const runAnimation = () => {
     if(elInView(aboutBlognesia, 100)) addAnimation(aboutBlognesia)
     if (elInView(ourVision, 100)) addAnimation(ourVision)
     if (elInView(ourVisionImage, 150)) addAnimation(ourVisionImage)
+    if (elInView(ourChief, 100)) addAnimation(ourChief)
 
     // I keep all the forEach function above with normal syntax (not a one liner), because I want to keep it readable  
 
@@ -84,4 +86,3 @@ window.addEventListener("scroll", () => {
     setTimeout(activateCount, 750)
 })
 // ANIMATE ON SCROLL
-
