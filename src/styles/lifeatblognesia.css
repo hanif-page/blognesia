@@ -66,6 +66,9 @@
 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .testimonial h1 
@@ -346,6 +349,12 @@
 
 @media screen and (min-width: 1080px)
 {
+    .testimonial-content
+    {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+
     .testimonialcard-container
     {
         display: flex;
