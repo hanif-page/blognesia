@@ -97,6 +97,11 @@ likeContainer.forEach(element => {
     }
   )})
 
+// generating copyright year
+const copyrightYear = document.querySelector(".copyright .yyyy")
+const currentDate = new Date()
+copyrightYear.innerHTML = currentDate.getFullYear()
+
 // loading animation 
 window.addEventListener("load", () => {
     const loader = document.querySelector(".loader")
